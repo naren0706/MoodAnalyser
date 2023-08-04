@@ -4,19 +4,20 @@ namespace MoodAnalyserTest
 {
     public class Tests
     {
-        MoodAnalyser analyser = new MoodAnalyser();
         [Test]
         public void GivenSadMessage_WhenAnalye_ShouldReturnSad()
         {
             string message = "I am in sad mood";
-            string actual = analyser.AnalyseMood(message);
+            MoodAnalyser analyser = new MoodAnalyser(message);
+            string actual = analyser.AnalyseMood();
             Assert.AreEqual(actual, "SAD");
         }
         [Test]
         public void GivenAnyMessage_WhenAnalye_ShouldReturnHappy()
         {
             string message = "I am in any mood";
-            string actual = analyser.AnalyseMood(message);
+            MoodAnalyser analyser = new MoodAnalyser(message);
+            string actual = analyser.AnalyseMood();
             Assert.AreEqual(actual, "HAPPY");
         }
     }

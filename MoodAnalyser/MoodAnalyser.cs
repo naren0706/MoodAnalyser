@@ -2,9 +2,16 @@
 {
     public class MoodAnalyser
     {
-        public string AnalyseMood(string message)
+        string message;
+
+        public MoodAnalyser(string message)
         {
-            if (message.ToLower().Contains("sad"))
+            this.message = message;
+        }
+
+        public string AnalyseMood()
+        {
+            if (this.message.ToLower().Contains("sad"))
                 return "SAD";
             return "HAPPY";
         }
