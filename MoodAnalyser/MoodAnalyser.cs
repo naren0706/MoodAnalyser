@@ -11,9 +11,16 @@
 
         public string AnalyseMood()
         {
-            if (this.message.ToLower().Contains("sad"))
-                return "SAD";
-            return "HAPPY";
+            try
+            {
+                if (this.message.ToLower().Contains("sad"))
+                    return "SAD";
+                return "HAPPY";
+            }
+            catch(NullReferenceException)
+            {
+                return "HAPPY";
+            }
         }
     }
 }
